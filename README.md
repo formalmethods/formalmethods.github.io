@@ -1,2 +1,2 @@
-# Formal Methods for Engineers #
+# Formal Methods made simple #
 
