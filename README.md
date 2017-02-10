@@ -1,2 +1,2 @@
-# Formal Methods Corner #
+# Formal Methods Corner
 
