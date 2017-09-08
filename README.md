@@ -1,2 +1,0 @@
-# Formal Methods Little Corner
-
