@@ -1,0 +1,15 @@
+_includes/
+_layouts/
+_sass/
+_site/
+assets/
+CODE_OF_CONDUCT.md
+Gemfile
+Gemfile.lock
+History.markdown
+LICENSE.txt
+minima.gemspec
+README.md
+screenshot.png
+script/
+.sass-cache
