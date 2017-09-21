@@ -1,5 +1,4 @@
 _includes/
-_layouts/
 _sass/
 _site/
 assets/
@@ -13,3 +12,6 @@ README.md
 screenshot.png
 script/
 .sass-cache
+_layouts/home.html
+_layouts/page.html
+_layouts/post.html
