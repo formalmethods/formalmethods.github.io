@@ -11,6 +11,11 @@ github_username:  formalmethods
 minima:
   date_format: "%b %-d, %Y"
 
+google_analytics: UA-106780132-1
+
+disqus:
+    shortname: formalmethods
+
 header_pages:
   - about.md
 #  - consulting.md
