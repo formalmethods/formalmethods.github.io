@@ -33,10 +33,10 @@ Lustre, model-checking, SMT, Z3, BMC
 
 Lustre is used mostly in avionics and automotive domains, but it finds applications also in nuclear plants and industrial automation. Airbus, United Technologies, Ansaldo, Rockwell-Collins, Schneider Electric, Siemens are just a few examples of companies that employ Lustre for the specification of safety-critical systems. 
 
-The following example shows a simple integer counter initialized to 0, and incremented by 1 at each clock tic, unless a reset signal comes to restore the value to 0.
+The following example, `counter.lus` shows a simple integer counter initialized to 0, and incremented by 1 at each clock tic, unless a reset signal comes to restore the value to 0.
 
 {% highlight lustre %}
-node counter (reset : bool) returns (c : int)
+node counter (reset : bool) returns (c : int);
 let
     c = 0 -> if reset then 0 else (pre c) + 1;
 tel
@@ -46,18 +46,55 @@ For those who are more familiar with [Simulink][simulink], the above code is equ
 
 TODO: insert simulink model
 
-TODO: supported data-types e pippone su semantica precisa
+The primitive data-types of Lustre signals are:
+- bool: signals that may assume value 0 (false) or 1 (true);
+- int: integers represented as 32-bits values, same as `int` of most C implementations;
+- real: single-precision floating-point values, same as `float` of C.
 
 We shall not indulge more on the Lustre language, as there are already a number of resources available online in addition to the ones mentioned so far, such as [the PhD thesis of George E. Hagen][hagen], or [a Lustre course by Philipp Ruemmer][luke].
 
-## Translating Lustre to Intrepyd's Python
+## Analyzing Lustre with Intrepyd: Simulation
 
-[Intrepyd github repository][intrepyd]
+We first show how to simulate a Lustre node with Intrepyd. This is useful to quickly take confidence with a specification. The following python snippet is all you need to simulate the node `counter` above:
 
 {% highlight python %}
-def main():
-    print 'Hello World'
+import intrepyd as ip
+import intrepyd.tools as ts
+
+def do_main():
+    ctx = ip.Context()
+    outputs = ts.translate_lustre(ctx, 'counter.lus', 'counter', 'float32')
+    ts.simulate(ctx, 'counter.lus', 10, outputs)
+
+if __name__ == "__main__":
+    do_main()
 {% endhighlight %}
+
+Suppose it was saved in a `simulate.py`, it can be run from a shell with
+
+{% highlight bash %}
+$ python simulate.py counter.lus
+Simulating using default values into counter.lus.csv
+Simulation result written to counter.lus.csv
+   0  1  2  3  4  5  6  7  8  9   10
+c   0  1  2  3  4  5  6  7  8  9  10
+i0  F  F  F  F  F  F  F  F  F  F   F
+{% endhighlight %}
+
+As the outpus says, the simulation was produced by using a default value for the input 0 (reset), which is **false**. The trace however was written to a file `counter.lus.csv`. The values for the inputs can be overridden in the file to provide a different simulation trace. Suppose we set the reset to **true** at step 3 and 7, we can now obtain the following simulation trace:
+
+{% highlight bash %}
+$ python simulate.py counter.lus
+Re-simulating using input values from counter.lus.csv
+Simulation result written to counter.lus.csv
+   0  1  2  3  4  5  6  7  8  9  10
+c   0  1  2  0  1  2  3  0  1  2  3
+i0  F  F  F  T  F  F  F  T  F  F  F
+{% endhighlight %}
+
+which produces the expected behavior.
+
+## Analyzing Lustre with Intrepyd: Verification
 
 ## Experiments
 
