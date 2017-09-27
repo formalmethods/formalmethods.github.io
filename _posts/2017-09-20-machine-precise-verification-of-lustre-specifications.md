@@ -5,6 +5,12 @@ categories: lustre
 author: "Roberto Bruttomesso"
 ---
 
+<style>
+.tablelines table, .tablelines td, .tablelines th {
+        border: 1px solid black;
+        }
+</style>
+
 ## Summary
 
 In this post we show how to use [Intrepyd][intreport] ([repo][intrepyd]) to translate and
