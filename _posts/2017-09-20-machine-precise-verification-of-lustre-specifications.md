@@ -131,6 +131,7 @@ The following table summarizes some features of the aforementioned algorithms, a
 | IMC |       X      |        X       |          |      |       |
 | IC3 |       X      |        X       |          |      |   X   |
 |  BR |       X      |        X       |     X    |      |       |
+{: .tablelines}
 
 Consider the following model `counter2.lus` which is similar to the previous `counter.lus` to which we have added a property, wrapped inside a `top` node. The property is clearly not valid.
 
@@ -274,6 +275,7 @@ The benchmarks suite contains also some designs that use the `real` data-type. A
 | large/cruise_controller_22.lus | Timeout | 300.00 |
 | large/cruise_controller_23.lus | Timeout | 300.00 |
 | large/cruise_controller_24.lus | Timeout | 300.00 |
+{: .tablelines}
 
 ## Conclusion
 
