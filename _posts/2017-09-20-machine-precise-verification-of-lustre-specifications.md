@@ -17,7 +17,7 @@ In this post we show how to use [Intrepyd][intreport] ([repo][intrepyd]) to tran
 verify [Lustre][lustre] specifications. The translation is such that the semantic
 is **machine-precise**, i.e., we verify properties by taking into account
 finite integers and floating-point representations for integers and real
-variables, which is something that, to the best of our knowledge, is not
+variables respectively, which is something that, to the best of our knowledge, is not
 available even in commercial tools. We compare Intrepyd with an existing
 tool, [Luke][luke], on the integer part (as Luke does not support reals),
 and we report on solving some benchmarks with floating-point arithmetic
@@ -59,6 +59,7 @@ The primitive data-types of Lustre signals are machine-precise types:
 In Intrepyd we interpret the above data-types following the same machine-precise semantics. The same approch is followed in [Luke][luke] (restricted to the `bool` and `int` types). This approach requires using time-consuming algorithms but:
 - algorithms are decision procedures (they always terminate);
 - non-linear arithmetic can be taken into account.
+
 Other tools, such as [Kind2][kind2], instead interpret "int" as numbers in **Z**, and "real" as numbers in **Q**. The latter approach is certainly motivated by some pragmatic choices, for instance, very efficient algorithms do exists for that setting. But it also has heavy drawbacks:
 - non-linear arithmetic in **Z** is undecidable, only linear arithmetic could be allowed in a design;
 - arithmetic in **Z** never overflows;
