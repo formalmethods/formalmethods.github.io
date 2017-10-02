@@ -64,6 +64,7 @@ Other tools, such as [Kind2][kind2], instead interpret "int" as numbers in **Z**
 - non-linear arithmetic in **Z** is undecidable, only linear arithmetic could be allowed in a design;
 - arithmetic in **Z** never overflows;
 - arithmetic in **Q** does not suffer of rounding and approximations that are typical of floating-point numbers.
+
 In a world where most software failures are due to unseen approximations and overflows we believe that using a machine-precise semantics is of paramount importance for increasing the confidence on the design.
 
 We shall not indulge more on the Lustre language, as there are already a number of resources available online in addition to the ones mentioned so far, such as [the PhD thesis of George E. Hagen][hagen], or [a Lustre course by Philipp Ruemmer][luke].
