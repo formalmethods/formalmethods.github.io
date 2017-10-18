@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Machine-precise Verification of Lustre specifications"
+title: "Machine-precise Verification of Lustre Specifications"
 categories: lustre
 author: "Roberto Bruttomesso"
 ---
@@ -8,7 +8,7 @@ author: "Roberto Bruttomesso"
 <style>
 .tablelines table, .tablelines td, .tablelines th {
         border: 1px solid black;
-        }
+ }
 </style>
 
 ## Summary

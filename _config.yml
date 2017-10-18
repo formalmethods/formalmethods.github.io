@@ -26,3 +26,4 @@ theme: minima
 exclude:
   - Gemfile
   - Gemfile.lock
+future: true
