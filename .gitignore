@@ -13,5 +13,4 @@ screenshot.png
 script/
 .sass-cache
 _layouts/home.html
-_layouts/page.html
 _layouts/post.html
