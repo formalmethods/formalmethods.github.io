@@ -8,7 +8,6 @@ author: "Roberto Bruttomesso"
 <style>
 .tablelines table, .tablelines td, .tablelines th {
     border: 1px solid black;
-    border-collapse: collapse;
     width: 50%;
 }
 </style>
