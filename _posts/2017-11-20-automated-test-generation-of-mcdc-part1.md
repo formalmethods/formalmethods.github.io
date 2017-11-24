@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Automated Test Generation of MC/DC (part 1)"
-categories: ATG, DO-178C, simulink, lustre
+categories: ATG
 author: "Roberto Bruttomesso"
 ---
 
