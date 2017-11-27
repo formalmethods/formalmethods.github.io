@@ -11,8 +11,6 @@ author: "Roberto Bruttomesso"
  }
 </style>
 
-## Summary
-
 In this post we show how to use [Intrepyd][intreport] ([repo][intrepyd]) to translate and
 verify [Lustre][lustre] specifications. The translation is such that the semantic
 is **machine-precise**, i.e., we verify properties by taking into account

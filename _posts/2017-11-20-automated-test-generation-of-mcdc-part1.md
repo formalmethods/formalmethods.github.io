@@ -11,8 +11,6 @@ author: "Roberto Bruttomesso"
 }
 </style>
 
-## Summary
-
 In this post (and its companion [part 2][part2]) we show how to automatically generate
 tests from a Simulink or Lustre specification using [Intrepyd][intrepyd]. 
 The tests will provide full coverage using the Modified Condition/Decision Coverage (MD/DC
