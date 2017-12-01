@@ -31,7 +31,7 @@ ATG, MC/DC, DO-178C, simulink, lustre, model-checking
 
 Avionics software is perhaps the most representative example of
 **critical** software, as bugs can result into catastrophic events
-such as the loss of hundreds of human lives. Moreover airborne
+such as the loss of hundreds of human lives. Moreover, airborne
 software cannot be patched or fixed, nor it can easily undergo
 major adjustments. It is no surprise that the development process
 is regulated by a standard entitled "Software Considerations in
@@ -72,7 +72,7 @@ Let's forget about the branch statement, and focus
 instead on decisions and conditions, which are the only ingredients needed to
 talk about and compute tests for MC/DC.
 A test for the above decision, call it \\(D\\), is an assignment
-of a truth value to \\(x\\) \\(y\\), and \\(z\\). There are a total of eigth possible tests
+of a truth value to \\(x\\) \\(y\\), and \\(z\\). There is a total of eigth possible tests
 (columns \\(x\\), \\(y\\), and \\(z\\) are the test inputs, while the 
 \\(D\\) column is the expected value):
 
@@ -100,8 +100,8 @@ condition \\(c\\) is replaced with \\(\neg c\\). For example
 \\(D[c_3] = (x \wedge y) \vee (x \wedge z)\\);
 recall that \\(c_3\\) is "the second occurrence of x", and that \\(\neg \neg x = x\\).
 
-\\(\\{t_1 \ldots t_8\\}\\) represent the test suite with the maximum cardinality, 
-it they perfectly characterize the behavior of the decision: change a single gate in the
+\\(\\{t_1 \ldots t_8\\}\\) represent the test suite with the maximum cardinality.
+It perfectly characterizes the behavior of the decision: change a single gate in the
 Boolean expression, and at least one test will surely fail (unless
 you are lucky enough to change the expression into an equivalent one,
 but that would require changing more than one gate).
@@ -131,9 +131,9 @@ respects the four conditions above (recall that \\(D[c_1] = (\neg x \wedge y) \v
 1. \\(t_3(D) = F\\) and \\(t_3(D[c_1]) = T\\)
 1. \\(t_7(D) = T\\) and \\(t_7(D[c_1]) = F\\)
 
-Similarly it is possible to show that \\((t_5, t_7)\\), \\((t_2, t_6)\\), and \\((t_2, t_3)\\)
+Similarly, it is possible to show that \\((t_5, t_7)\\), \\((t_2, t_6)\\), and \\((t_2, t_3)\\)
 are valid independence pairs for \\(c_2\\), \\(c_3\\)", and
-\\(c_4\\) respectively. Therefore the test suite
+\\(c_4\\) respectively. Therefore, the test suite
 \\(\\{t_2, t_3, t_5, t_6, t_7\\}\\) provides MC/DC for the given decision.
 
 ## Masking and Unique-cause MC/DC
@@ -157,7 +157,7 @@ In Masking MC/DC more than one condition may change in an independence pair, but
 only one will contribute to the decision outcome, while the other one will have
 to be **masked** (which justifies the name "masking"). Take for instance
 the independence pair for \\(c_1\\), \\((t_2, t_3)\\):
-in both tests \\(c_3\\), the second occurrence of \\(x\\), is masked out in the 
+in both tests \\(c_3\\), the second occurrence of \\(x\\), is masked out in the
 subformula \\((\neg x \wedge z)\\) by
 the fact that \\(t_2(z) = t_3(z) = F\\).
 
@@ -197,7 +197,7 @@ that \\(y\\) is not relevant. This is time consuming, and more error prone.
 
 ## When is it not possible to find MC/DC ?
 
-Not all Boolean expressions admit Consider the following decision
+Consider the following decision
 
 \\((x \wedge y) \vee (x \wedge y \wedge z)\\)
 
