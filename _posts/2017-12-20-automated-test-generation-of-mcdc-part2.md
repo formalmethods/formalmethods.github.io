@@ -13,4 +13,4 @@ author: "Roberto Bruttomesso"
 }
 </style>
 
-Scheduled for December the 20th.
+Scheduled for December the ~~20th~~ 27th.
