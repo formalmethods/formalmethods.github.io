@@ -48,7 +48,7 @@ All the examples and scripts used in this post are available from a [public gith
 
 Consider the following Simulink circuit
 
-![Example 1]({{ "/imgs/atg_example1.png" }})
+![Example 1]({{ "/imgs/atg_example1.PNG" }})
 
 The circuit (``example1.slx``) is a simple combinational network with three inputs (A, B, C) and one output (O1).
 We assume that the circuit represents the decision for which we need to generate tests. In
@@ -106,7 +106,7 @@ and execution-time.
 The following circuit (``example2.slx``) encodes three decisions at once that share the same conditions. Each
 decision has been highlighted with a rectangle:
 
-![Example 2]({{ "/imgs/atg_example2.png" }})
+![Example 2]({{ "/imgs/atg_example2.PNG" }})
 
 For this circuit we shall use a slightly more complex script, in order to capture
 the three decisions at once:
@@ -236,7 +236,7 @@ b: 2, 1
 The following example contains single precision floating-point inputs that are fed to relational
 operators:
 
-![Example 4]({{ "/imgs/atg_example4.png" }})
+![Example 4]({{ "/imgs/atg_example4.PNG" }})
 
 The conditions here are the two relational operators, and the Boolean input `C`. Tests can be
 computed with the following script:
